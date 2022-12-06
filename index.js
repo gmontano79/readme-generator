@@ -47,23 +47,49 @@ inquirer
       type: 'list',
       message: 'which License?',
       name: 'license',
-      choices: ['Apache 2.0[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0) ',
-        'Eclipse Public License 1.0 (https://opensource.org/licenses/EPL-1.0)',
-        'GNU GPL v3 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)] (https://www.gnu.org/licenses/gpl-3.0)',
-        'IBM 1.0 (https://opensource.org/licenses/IPL-1.0)',
-        'ISC License',
+      choices: [
+        'Apache 2.0',
+        'GNU GPL v3',
+        'IBM 1.0',
         'MIT License',
         'Mozilla Public 2.0',
-        'oDbL',
         'Other']
     },
+    {
+      type: 'input',
+      message: 'What is your GitHub username?',
+      name: 'github',
+    },
+    {
+      type: 'input',
+      message: 'What is email?',
+      name: 'email',
+    }
   ])
 
   .then(answers => {
     console.log(answers);
 
 
+    // FUNCTION TO CREATE BADGE 
 
+    function createBadge(license) {
+      var badge = "";
+      if (answers.license === 'Apache 2.0') {
+        badge = `![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)`
+      } else if (answers.license === 'GNU GPL v3') {
+        badge = `![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)`
+      } else if (answers.license === 'IBM 1.0') {
+        badge = `![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)`
+      } else if (answers.license === 'MIT License') {
+        badge = `![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)`
+      } else if (answers.license === 'Mozilla Public 2.0') {
+        badge = `![License: MPL 2.0](https://img.shields.io/badge/License-MPL_2.0-brightgreen.svg)`
+      } else {
+        badge = ""
+      }
+      return badge;
+    };
 
     // TODO: Create a function to write README file
     // function writeToFile(fileName, data) { }
@@ -71,41 +97,60 @@ inquirer
     fs.writeFile('README.md', `
  # ${answers.title}
 
+## ${createBadge(answers.license)}
+
+
  ## Table of Contents
-*[installation] (#installation)
-*[Usage] (#usage)
-*[TestInstruction] (#installation)
-*[Deploymentlink] (#installation)
-*[Credits] (#installation)
-*[Licences] (#installation)
+
+* [installation] (#installation)
+* [Usage] (#usage)
+* [TestInstructions] (#testinstructions)
+* [Deploymentlink] (#deploymentlink)
+* [Credits] (#credits)
+* [Licences] (#license)
+* [Questions] (#questions)
+
 
 ## Description
 
 ${answers.description}
 
+
 ## Installation
 
 ${answers.installation}
+
 
 ## Usage
 
 ${answers.use}
 
+
 ## Test Instructions
 
 ${answers.test}
  
+
 ## Deployment application link
 
 ${answers.deployment}
+
 
 ## Credits
 
 ${answers.contribution}
 
+
 ## License
 
 ${answers.license}
+
+
+## Questions:
+
+### For further questions contact me thru my GitHub profile or my email:
+### GitHub profile: https://github.com/${answers.github}
+### Email: ${answers.email}
 
 
   `,
@@ -121,9 +166,23 @@ ${answers.license}
   })
 
 
+// FUNCTION FOR BADGE
 
-    // // TODO: Create a function to initialize app
-    // function init() { }
 
-    // // Function call to initialize app
-    // init();
+
+
+// // TODO: Create a function to initialize app
+// function init() { }
+// function init() {
+//   inquirer.prompt(questions)
+//     .then(function (answers) {
+//       console.log(answers);
+//       var fileContent = generateMarkdown(answers);
+//       writeToFile(fileContent)
+//     }
+//     );
+
+// }
+
+// // Function call to initialize app
+// init();
