@@ -1,50 +1,60 @@
 
- # kjh
-## ![License: IPL 1.0](https://img.shields.io/badge/License-IPL_1.0-blue.svg)
+# README GENERATOR
 
- ## Table of Contents
+## ![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 
-### - [installation] (#installation)
-### - [Usage] (#usage)
-### - [TestInstructions] (#testinstructions)
-### - [Deploymentlink] (#deploymentlink)
-### - [Credits] (#credits)
-### - [Licences] (#license)
-### - [Questions] (#questions)
+
+## Table of Contents
+
+* [installation] (#installation)
+* [Usage] (#usage)
+* [TestInstructions] (#testinstructions)
+* [Deploymentlink] (#deploymentlink)
+* [Credits] (#credits)
+* [Licences] (#licences)
+* [Questions] (#questions)
+
 
 ## Description
 
-khjk
+This apllication will help developers to create a new READE.md document in an easy and profesional way. While just answering some questions, the the functionability of the app will automatically generate a new file.
+
 
 ## Installation
 
-hjk
+To run this app you need to install INQUIRER and FS dependencies.
+
 
 ## Usage
 
-jhk
+To use this app you need to run it from the TERMINAL.
+
 
 ## Test Instructions
 
-hkhl
+to test the app you need to type inside terminal :  node index.js
  
+
 ## Deployment application link
 
-hjk
+https://github.com/gmontano79/readme-generator
+
 
 ## Credits
 
-hjkl
+N/A
+
 
 ## License
 
-IBM 1.0
+This application is under this license: MIT License (https://opensource.org/licenses/MIT)
+
 
 ## Questions:
 
 ### For further questions contact me thru my GitHub profile or my email:
 ### GitHub profile: https://github.com/gmontano79
-### Email: rolo18@ahoo.com
+### Email: gmontano79@gmail.com
 
 
   
